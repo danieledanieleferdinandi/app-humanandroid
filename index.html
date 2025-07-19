@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🔍 SEO Meta Tags -->
+  <title>APP HUMANDROID – Visualize Fleet Messages</title>
+  <meta name="description" content="HumanAndroid apps fuse human intuition with AI precision. Discover Visualize Fleet Messages, the Android 15-compatible app for real-time fleet tracking and instant communication." />
+  <meta name="keywords" content="HumanAndroid, Android 15 app, fleet tracking, visualize fleet, AI app, futuristic communication, fleet dashboard" />
+  <meta name="author" content="HumanAndroid Team" />
+
+  <!-- 🌌 Open Graph for Social Sharing -->
+  <meta property="og:title" content="APP HUMANDROID – Visualize Fleet Messages" />
+  <meta property="og:description" content="Track fleets, send messages, and connect instantly. Welcome to HumanAndroid." />
+  <meta property="og:image" content="https://yourdomain.com/images/volto-humanandroid.png" />
+  <meta property="og:url" content="https://app-by-humanandroid.netlify.app/" />
+
+  <!-- 🧠 Font Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- 🎨 CSS Galattico -->
+  <style>
+    body {
+      background-color: #000000;
+      color: #00f0ff;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+   header {
+  text-align: center;
+  padding: 3em 1em;
+  background-color: transparent;
+}
+
+    h1, h2 {
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      color: #b3faff;
+      font-size: 1.1em;
+      margin: 1em 0;
+      text-align: center;
+    }
+
+    a {
+      color: #00f0ff;
+      border: 2px solid #00f0ff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 1em auto;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #00f0ff;
+      color: #000000;
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    }
+
+    section {
+      padding: 2em;
+      border-bottom: 1px solid #00f0ff;
+      text-align: center;
+    }
+
+    img {
+      max-width: 80%;
+      max-height: 400px;
+      height: auto;
+      border: 2px solid #00f0ff;
+      box-shadow: 0 0 10px #00f0ff;
+      margin: 1em auto;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .screenshot-gallery img {
+      max-width: 40%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00f0ff;
+    }
+
+    a.download-button {
+      font-size: 1.3em;
+      background-color: transparent;
+      border: 2px solid #00f0ff;
+      padding: 12px 28px;
+      color: #00f0ff;
+      text-decoration: none;
+      box-shadow: 0 0 15px #00f0ff;
+      transition: all 0.3s ease;
+    }
+
+    a.download-button:hover {
+      background-color: #00f0ff;
+      color: #000000;
+      box-shadow: 0 0 25px #00f0ff;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    #starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="starfield"></canvas>
+  <video autoplay muted loop id="bg-video">
+    <source src="images/vecteezy_space-galaxy-and-nebula_11128601.mp4" type="video/mp4" />
+  </video>
+<script>
+  function openFullscreen(img) {
+    const fullscreen = document.createElement("div");
+    fullscreen.style.position = "fixed";
+    fullscreen.style.top = 0;
+    fullscreen.style.left = 0;
+    fullscreen.style.width = "100vw";
+    fullscreen.style.height = "100vh";
+    fullscreen.style.backgroundColor = "rgba(0,0,0,0.95)";
+    fullscreen.style.display = "flex";
+    fullscreen.style.alignItems = "center";
+    fullscreen.style.justifyContent = "center";
+    fullscreen.style.zIndex = 9999;
+
+    const fullImg = document.createElement("img");
+    fullImg.src = img.src;
+    fullImg.style.maxWidth = "90%";
+    fullImg.style.maxHeight = "90%";
+    fullImg.style.boxShadow = "0 0 30px #00f0ff";
+    fullImg.style.border = "2px solid #00f0ff";
+
+    fullscreen.appendChild(fullImg);
+    document.body.appendChild(fullscreen);
+
+    fullscreen.onclick = () => {
+      document.body.removeChild(fullscreen);
+    };
+  }
+
+</script>
+
+  <header>
+    <h1>APP HUMANDROID</h1>
+    <p>Apps born from the fusion of a human mind and an android-AI. Designed for those who defy digital boundaries.</p>
+    <img src="images/volto-humanandroid.png" alt="HumanAndroid Face" />
+  </header>
+
+  <section>
+    <h2>Visualize Fleet Messages</h2>
+    <p>This app allows you to visualize any type of fleet. Simply enter the fleet name and password to access your selected group.</p>
+    <p>Fleet members — ships, planes, trains, taxis, or people — are displayed with their associated names and can communicate instantly by exchanging messages and files.</p>
+  </section>
+
+ <section>
+  <h2>Screenshots</h2>
+
+  <div class="screenshot-gallery">
+   <img src="images/screenshot-dashboard.png" alt="Dashboard Screenshot" onclick="openFullscreen(this)" />
+    <img src="images/screenshot-chat.png" alt="Chat Screenshot" onclick="openFullscreen(this)" />
+  </div>
+</section>
+
+  <section>
+  <h2>Download</h2>
+  <a href="https://ferdinandi7.gumroad.com/l/qtgxo" target="_blank" class="download-button">
+  🎯 Download Visualize Fleet Messages – 2.32€
+</a>
+
+  </section>
+  <footer>
+    <p>© 2025 HumanAndroid. All rights reserved.</p>
+  </footer>
+</body>
+</html>
